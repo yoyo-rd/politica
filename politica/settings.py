@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a%4gfv+9t-e*5)el544&p9r@yxc7qbytw(*-@w_z$&%v0%^5bn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['yoyo2024.pythonanywhere.com']
+ALLOWED_HOSTS = ['yoyo2024.pythonanywhere.com', 'localhost' ]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'partidos',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheader.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'politica.urls'
@@ -68,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 WSGI_APPLICATION = 'politica.wsgi.application'
 
